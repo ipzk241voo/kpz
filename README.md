@@ -17,7 +17,7 @@ The code is designed to be maintainable, scalable, and flexible by following cor
 - The [`DriveLicense`](ConsoleApp/Document.cs#165)class demonstrates composition by holding a [`List<Car>`](ConsoleApp/Document.cs#172), indicating a "has-a" relationship between [`DriveLicense`](ConsoleApp/Document.cs#165) and [`Car`](ConsoleApp/Document.cs#151) objects. This allows dynamic associations between objects.
 
 ### 5. **Inheritance**
-- The document types [`Passport`](ConsoleApp/Document.cs#36), `Military`, and [`DriveLicense`](ConsoleApp/Document.cs#165)inherit from the base [`Document`](ConsoleApp/Document.cs#6) class, reducing code duplication and promoting the reuse of common attributes and methods.
+- The document types [`Passport`](ConsoleApp/Document.cs#36), [`Military`](ConsoleApp/Document.cs#104), and [`DriveLicense`](ConsoleApp/Document.cs#165)inherit from the base [`Document`](ConsoleApp/Document.cs#6) class, reducing code duplication and promoting the reuse of common attributes and methods.
 
 ### 6. **Single Responsibility Principle (SRP)**
 - Each class has a single, focused responsibility. For example, [`Passport`](ConsoleApp/Document.cs#36) manages passport details, [`Military`](ConsoleApp/Document.cs#104) handles military information, and `QRCodeGenerator` focuses on QR code creation. This separation of concerns improves maintainability.
