@@ -1,6 +1,4 @@
 ﻿using QRCoder;
-using System;
-using System.ComponentModel;
 using System.Drawing;
 
 namespace ConsoleApp
