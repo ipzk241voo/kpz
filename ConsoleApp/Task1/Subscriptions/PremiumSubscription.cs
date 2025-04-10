@@ -1,6 +1,6 @@
-﻿namespace ConsoleApp.Subscriptions
+﻿namespace ConsoleApp.Task1.Subscriptions
 {
-    internal class PremiumSubscription: Subscription
+    internal class PremiumSubscription : Subscription
     {
         public PremiumSubscription()
         {

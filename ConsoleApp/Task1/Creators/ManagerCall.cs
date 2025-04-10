@@ -1,13 +1,13 @@
 ﻿using static System.Console;
-using ConsoleApp.Subscriptions;
+using ConsoleApp.Task1.Subscriptions;
 
-namespace ConsoleApp.Creators
+namespace ConsoleApp.Task1.Creators
 {
-    internal class WebSite : ISubscriptionCreator
+    internal class ManagerCall : ISubscriptionCreator
     {
         public Subscription CreateSubscription(string type)
         {
-            WriteLine("Creating subscription via Website...");
+            WriteLine("Creating subscription via ManagerCall...");
             return Create(type);
         }
 
@@ -16,14 +16,14 @@ namespace ConsoleApp.Creators
             switch (type)
             {
                 case "Domestic":
-                    return new DomesticSubscription();
+                    return new DomesticSubscription { Price = 80, Features = { "HD+", "Music+" } };
                 case "Educational":
-                    return new EducationalSubscription();
+                    return new EducationalSubscription { Price = 220 };
                 case "Premium":
-                    return new PremiumSubscription();
+                    return new PremiumSubscription { Price = 330 };
                 default:
                     throw new ArgumentException("Invalid subscription type.");
-                }
+            }
         }
     }
 }

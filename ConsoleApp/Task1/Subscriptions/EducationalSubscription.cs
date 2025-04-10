@@ -1,8 +1,9 @@
-﻿namespace ConsoleApp.Subscriptions
+﻿namespace ConsoleApp.Task1.Subscriptions
 {
-    internal class EducationalSubscription: Subscription
+    internal class EducationalSubscription : Subscription
     {
-        public EducationalSubscription() {
+        public EducationalSubscription()
+        {
             Price = 460.20;
             MinPeriod = 2;
             Channels = new List<string> { "TV+", "HD-Rezka", "ICTV+" };

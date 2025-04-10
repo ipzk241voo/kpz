@@ -8,8 +8,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Task1\Program.cs" />
+    <Compile Remove="Task2\Program.cs" />
+    <Compile Remove="Task3\Program.cs" />
+    <Compile Remove="Task4\Program.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Task4\Program.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Task1\Program.cs" />
+    <None Include="Task3\Program.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="QRCoder" Version="1.4.1" />
     <PackageReference Include="System.Drawing.Common" Version="10.0.0-preview.1.25080.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Task2\Program.cs" />
   </ItemGroup>
 
 </Project>

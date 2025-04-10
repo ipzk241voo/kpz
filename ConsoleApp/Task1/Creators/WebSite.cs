@@ -1,13 +1,13 @@
 ﻿using static System.Console;
-using ConsoleApp.Subscriptions;
+using ConsoleApp.Task1.Subscriptions;
 
-namespace ConsoleApp.Creators
+namespace ConsoleApp.Task1.Creators
 {
-    internal class MobileApp : ISubscriptionCreator
+    internal class WebSite : ISubscriptionCreator
     {
         public Subscription CreateSubscription(string type)
         {
-            WriteLine("Creating subscription via MobileApp...");
+            WriteLine("Creating subscription via Website...");
             return Create(type);
         }
 

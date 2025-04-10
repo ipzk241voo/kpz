@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp.Subscriptions
+﻿namespace ConsoleApp.Task1.Subscriptions
 {
     internal abstract class Subscription
     {
