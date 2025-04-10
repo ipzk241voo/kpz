@@ -1,18 +1,15 @@
-﻿using ConsoleApp.Task2.Brand;
-using ConsoleApp.Task2.Factory;
-using ConsoleApp.Task2.Device;
-using static System.Console;
+﻿using static System.Console;
+using ConsoleApp.Task2.Decorator.Items;
+using ConsoleApp.Task2.Decorator;
+using ConsoleApp.Task2.Hero;
+using ConsoleApp.Task2.Interface;
 
+IHero hero = new Paladin();
 
-ITechFactory FBalaxy = new Balaxy();
-IDevice laptop = FBalaxy.CreateDevice("Laptop");
-WriteLine(laptop.Info());
+hero = new Armor(hero);
+hero = new Shield(hero);
+hero = new RingOfHealth(hero);
+hero = new Sword(hero);
 
-ITechFactory FIPhone = new IPhone();
-IDevice smartphone = FIPhone.CreateDevice("SmartPhone");
-WriteLine(smartphone.Info());
-
-
-ITechFactory FKiaomi = new Kiaomi();
-IDevice Netbook = FKiaomi.CreateDevice("Netbook");
-WriteLine(Netbook.Info());
+WriteLine("Description: " + hero.GetDescription());
+WriteLine("Power: " + hero.GetPower());

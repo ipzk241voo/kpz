@@ -1,10 +1,14 @@
-﻿using static System.Console;
-using ConsoleApp.Task3;
+﻿using ConsoleApp.Task3.Interface;
+using ConsoleApp.Task3.Render;
+using ConsoleApp.Task3.Shape;
 
-Authenticator auth1 = Authenticator.Instance("user1", "pass1");
-Authenticator auth2 = Authenticator.Instance("user2", "pass2"); // Спроба створити другий екземпляр
+IRenderer raster = new RasterRenderer();
+IRenderer vector = new VectorRenderer();
 
-WriteLine($"auth1 is auth2: {ReferenceEquals(auth1, auth2)}"); // Перевірка, чи це один і той самий об'єкт
+Shape triangle = new Triangle(raster);
+Shape circle = new Cricle(vector);
+Shape square = new Square(raster);
 
-WriteLine($"Authentication with correct credentials: {auth1.Authenticate("user1", "pass1")}");
-WriteLine($"Authentication with incorrect credentials: {auth1.Authenticate("user2", "pass2")}");
+triangle.Draw(); 
+circle.Draw();   
+square.Draw(); 

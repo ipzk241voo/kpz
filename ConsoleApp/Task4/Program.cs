@@ -1,22 +1,29 @@
 ﻿using static System.Console;
-using ConsoleApp.Task4;
+using ConsoleApp.Task4.Smart;
 
-Virus parent = new Virus("Root", "Alpha", 10.0, 5);
-Virus child1 = new Virus("Child1", "Beta", 5.0, 2);
-Virus child2 = new Virus("Child2", "Gamma", 3.0, 1);
-Virus grandchild1 = new Virus("Grandchild1", "Delta", 1.0, 0);
 
-parent.AddChild(child1);
-parent.AddChild(child2);
-child1.AddChild(grandchild1);
+WriteLine("Testing SmartTextChecker:");
 
-WriteLine("Original Family:");
-parent.PrintFamily();
+SmartTextChecker checker = new SmartTextChecker("test.txt");
+var content = checker.ReadText();
 
-Virus clonedParent = (Virus)parent.Clone();
+if (content != null)
+{
+    foreach (var line in content)
+    {
+        WriteLine(new string(line));
+    }
+}
 
-WriteLine("\nCloned Family:");
-clonedParent.PrintFamily();
+WriteLine("Testing SmartTextReaderLocker:");
 
-WriteLine($"Original and cloned objects are the same: {ReferenceEquals(parent, clonedParent)}");
-WriteLine($"Original child1 and cloned child1 are the same: {ReferenceEquals(parent.Children[0], clonedParent.Children[0])}");
+SmartTextReaderLocker locker = new SmartTextReaderLocker("test.txt", @"^test\.txt$");
+var lockedContent = locker.ReadText();
+
+if (lockedContent != null)
+{
+    foreach (var line in lockedContent)
+    {
+        WriteLine(new string(line));
+    }
+}

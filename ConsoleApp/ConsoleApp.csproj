@@ -12,15 +12,14 @@
     <Compile Remove="Task2\Program.cs" />
     <Compile Remove="Task3\Program.cs" />
     <Compile Remove="Task4\Program.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Task4\Program.cs" />
+    <Compile Remove="Task5\Program.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="Task1\Program.cs" />
+    <None Include="Task2\Program.cs" />
     <None Include="Task3\Program.cs" />
+    <None Include="Task4\Program.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Task2\Program.cs" />
+    <None Include="Task5\Program.cs" />
   </ItemGroup>
 
 </Project>

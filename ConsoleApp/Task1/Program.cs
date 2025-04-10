@@ -1,27 +1,14 @@
-﻿using ConsoleApp.Task1.Creators;
-using ConsoleApp.Task1.Subscriptions;
-using static System.Console;
+﻿using ConsoleApp.Task1.Class;
+using ConsoleApp.Task1;
 
-string sep = new string('-', 30);
+Logger logger = new Logger();
+logger.Log("Test log");
+logger.Error("Test error");
+logger.Warn("Test warn");
 
-WriteLine(sep);
-ISubscriptionCreator creator = new WebSite();
-Subscription sub = creator.CreateSubscription("Premium");
-WriteLine("WebSite Subscipte Premium\n" + sub.Info());
+FileWriter writer = new FileWriter("log.txt");
+FileLoggerAdapter fileLogger = new FileLoggerAdapter(writer);
 
-WriteLine(sep);
-
-creator = new MobileApp();
-sub = creator.CreateSubscription("Domestic");
-WriteLine("MobileApp Sub Domestic\n" + sub.Info());
-
-WriteLine(sep);
-
-creator = new ManagerCall();
-sub = creator.CreateSubscription("Educational");
-WriteLine("ManagerCall Education\n" + sub.Info());
-
-
-
-
-
+fileLogger.Log("Test log");
+fileLogger.Error("Test error");
+fileLogger.Warn("Test Warn");
