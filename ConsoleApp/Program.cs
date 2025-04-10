@@ -1,42 +1,21 @@
 ﻿using static System.Console;
+using ConsoleApp.Subscriptions;
+using ConsoleApp.Creators;
 
-using ConsoleApp;
+string sep = new string('-', 30);
 
-DocumentContainer container = new DocumentContainer();
+ISubscriptionCreator creator = new WebSite();
+Subscription sub = creator.CreateSubscription("Premium");
+WriteLine("WebSite Subscipte Premium\n" + sub.Info());
 
-Passport passport = new Passport(
-    "Ivanov", "Ivan",
-    "photo1.jpg", "01.01.1980", 
-    "Male", "Ukrainian", 
-    "01.01.2030", "01.01.2020", 
-    "P12345678"
-);
+WriteLine(sep);
 
-Military military = new Military(
-    "Petrov", "Petr",
-    "photo2.jpg", "15.03.1990", 
-    "Male", "M1234567", "01.01.2025", 
-    "Colonel"
-);
+creator = new MobileApp();
+sub = creator.CreateSubscription("Domestic");
+WriteLine("MobileApp Sub Domestic\n" + sub.Info());
 
-Car car1 = new Car("Toyota", "AB1234", "VIN12345");
-Car car2 = new Car("BMW", "CD5678", "VIN67890");
+WriteLine(sep);
 
-List<string> category = new List<string> { "A", "B", "C1" };
-List<Car> cars = new List<Car> { car1, car2 };
-
-DriveLicense driveLicense = new DriveLicense(
-    "Petrov", "Petr", 
-    "photo3.jpg", "15.03.1990", 
-    "Male", "DL123456",
-    category, cars
-);
-
-container.addDoc(passport);
-container.addDoc(military);
-container.addDoc(driveLicense);
-
-container.SetOutput(WriteLine);
-
-WriteLine("== ALL Document ==");
-container.showAllInfo();
+creator = new ManagerCall();
+sub = creator.CreateSubscription("Educational");
+WriteLine("ManagerCall Education\n" + sub.Info());
