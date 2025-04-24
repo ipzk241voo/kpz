@@ -1,14 +1,18 @@
-﻿using ConsoleApp.Task3.Interface;
-using ConsoleApp.Task3.Render;
-using ConsoleApp.Task3.Shape;
+﻿using ConsoleApp.Task;
+using static System.Console;
 
-IRenderer raster = new RasterRenderer();
-IRenderer vector = new VectorRenderer();
+TextEditor editor = new TextEditor();
 
-Shape triangle = new Triangle(raster);
-Shape circle = new Cricle(vector);
-Shape square = new Square(raster);
+editor.Write("Hello");
+editor.Show();
 
-triangle.Draw(); 
-circle.Draw();   
-square.Draw(); 
+editor.Write(", world!");
+editor.Show();
+
+editor.Undo();
+editor.Show();
+
+editor.Undo();
+editor.Show();
+
+ReadKey();

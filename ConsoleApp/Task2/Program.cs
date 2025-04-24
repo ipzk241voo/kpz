@@ -1,15 +1,29 @@
 ﻿using static System.Console;
-using ConsoleApp.Task2.Decorator.Items;
-using ConsoleApp.Task2.Decorator;
-using ConsoleApp.Task2.Hero;
-using ConsoleApp.Task2.Interface;
+using ConsoleApp.Task2;
 
-IHero hero = new Paladin();
+Runway runway1 = new Runway();
+Runway runway2 = new Runway();
+CommandCentre commandCentre = new CommandCentre(new[] { runway1, runway2 });
 
-hero = new Armor(hero);
-hero = new Shield(hero);
-hero = new RingOfHealth(hero);
-hero = new Sword(hero);
+Aircraft[] aircraftArray = {
+     new Aircraft("Boeing 737", commandCentre),
+     new Aircraft("Airbus A320", commandCentre),
+     new Aircraft("F-16", commandCentre)
+};
 
-WriteLine("Description: " + hero.GetDescription());
-WriteLine("Power: " + hero.GetPower());
+foreach (Aircraft aircraft in aircraftArray)
+{
+    commandCentre.RegisterAircraft(aircraft);
+}
+
+aircraftArray[0].Land();
+
+aircraftArray[1].Land();
+
+aircraftArray[2].Land(); // dont work
+
+aircraftArray[0].TakeOff();
+
+aircraftArray[2].Land(); // work
+
+ReadKey();

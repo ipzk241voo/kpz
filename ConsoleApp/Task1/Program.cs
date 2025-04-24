@@ -1,14 +1,17 @@
-﻿using ConsoleApp.Task1.Class;
-using ConsoleApp.Task1;
+﻿using static System.Console;
+using static ConsoleApp.Task1.SupportMenu;
 
-Logger logger = new Logger();
-logger.Log("Test log");
-logger.Error("Test error");
-logger.Warn("Test warn");
+string handler;
 
-FileWriter writer = new FileWriter("log.txt");
-FileLoggerAdapter fileLogger = new FileLoggerAdapter(writer);
-
-fileLogger.Log("Test log");
-fileLogger.Error("Test error");
-fileLogger.Warn("Test Warn");
+do
+{
+    handler = StartSupportMenu();
+    if (handler == string.Empty)
+    {
+        WriteLine("\nCould not determine support level. Please try again.\n");
+    }
+}
+while (handler == string.Empty);
+WriteLine($"\nYou have been connected to: {handler}");
+WriteLine("\nPress any key to exit...");
+ReadKey();
