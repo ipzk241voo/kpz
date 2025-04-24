@@ -1,4 +1,5 @@
 using System.IO;
+using ConsoleApp.Task5.Interface;
 
 namespace ConsoleApp.Task5.LightNode
 {

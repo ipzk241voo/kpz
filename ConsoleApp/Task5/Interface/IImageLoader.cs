@@ -1,4 +1,4 @@
-namespace ConsoleApp.Task5.LightNode
+namespace ConsoleApp.Task5.Interface
 {
     internal interface IImageLoader
     {

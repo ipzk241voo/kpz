@@ -1,3 +1,5 @@
+using ConsoleApp.Task5.Interface;
+
 namespace ConsoleApp.Task5.LightNode
 {
     internal class LightImageNode : LightNode
