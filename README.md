@@ -23,12 +23,13 @@
 
 ![image](/images/task2.png)
 
-### Завдання 3:
+### Завдання 3  [Спостерігач](https://github.com/ipzk241voo/kpz/tree/9c3d7f8cd50fd6d5bc4658b3deae99e309379b61):
 
 ## Виконання:
 ![image](/images/task3.png)
 
-### Завдання 4:
+### Завдання 4 [Стратегія](https://github.com/ipzk241voo/kpz/tree/911fc91a4c96be06a513542fac2c3059cae48fd5):
+
 
 ## Виконання:
 ![image](/images/task4.png)
